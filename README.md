@@ -1,70 +1,74 @@
-# Getting Started with Create React App
+# Tab Control Project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Welcome to the **Tab Control Project**! This project provides a dynamic tab-based interface with both frontend and backend components. Below are the instructions for setting up and running the project locally.
 
-## Available Scripts
+## Prerequisites
 
-In the project directory, you can run:
+Before you begin, make sure you have the following installed on your machine:
 
-### `npm start`
+- **Node.js** (includes npm)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Getting Started
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### 1. Clone the Repository
 
-### `npm test`
+First, clone the repository to your local machine:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+`git clone https://github.com/Morbiusss/tab-control.git`
 
-### `npm run build`
+markdown
+Copy code
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 2. Setting Up the Frontend
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+Copy code
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- Install the required dependencies:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+`npm install`
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Copy code
 
-## Learn More
+- Start the frontend application:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+`npm start`
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+less
+Copy code
 
-### Code Splitting
+The frontend will now be running at [http://localhost:3000](http://localhost:3000).
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### 3. Setting Up the Backend
 
-### Analyzing the Bundle Size
+- Navigate to the `backend` directory:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+`cd .\tab-control-backend\`
 
-### Making a Progressive Web App
+Copy code
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- Install the required dependencies for the backend:
 
-### Advanced Configuration
+`npm install`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-### Deployment
+Copy code
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+- Start the backend server:
 
-### `npm run build` fails to minify
+`npm run dev`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+arduino
+Copy code
+
+The backend will now be running at [http://localhost:5000](http://localhost:5000) (or another port if configured differently).
+
+## Project Screenshots
+
+![image](https://github.com/user-attachments/assets/3c06aa85-1c5b-47dc-87c2-343ab4763d33)
+![image](https://github.com/user-attachments/assets/dae5208c-8df0-453f-8fdd-cd0d463d14d6)
+![image](https://github.com/user-attachments/assets/887047ec-6cc4-4a28-bc83-60e9a9da1bd5)
+
+
