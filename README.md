@@ -21,9 +21,6 @@ Copy code
 
 ### 2. Setting Up the Frontend
 
-- Navigate to the `frontend` directory:
-
-`cd tab-control/frontend`
 
 
 Copy code
