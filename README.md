@@ -1,21 +1,20 @@
 # Tab Control Project
 
-This project consists of a frontend and backend that work together to provide a dynamic tab-based interface. Follow the instructions below to set up the project locally.
+This project consists of a **frontend** and **backend** that work together to provide a dynamic tab-based interface. Below are the instructions to set up and run the project locally.
 
 ## Prerequisites
 
-Make sure you have the following installed:
+Make sure you have the following installed on your machine:
 
-- **Node.js**: [Download and install Node.js](https://nodejs.org/)
-- **npm**: npm is included with Node.js.
+- [Node.js](https://nodejs.org/) (includes npm)
 
 ## Getting Started
 
 ### 1. Clone the Repository
 
-Clone the repository to your local machine using the following command:
+First, clone the repository to your local machine:
 
-```bash
+
 git clone https://github.com/Morbiusss/tab-control.git
 2. Setting Up the Frontend
 Navigate to the frontend directory:
@@ -51,6 +50,6 @@ Start the backend server:
 bash
 Copy code
 npm run dev
-The backend will now be running at http://localhost:5000 (or another port if configured differently).
+The backend will be running at http://localhost:5000 (or another port if configured differently).
 
-Project Screensho
+Project Screenshots
