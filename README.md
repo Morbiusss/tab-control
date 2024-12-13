@@ -14,7 +14,7 @@ Before you begin, make sure you have the following installed on your machine:
 
 First, clone the repository to your local machine:
 
-git clone https://github.com/Morbiusss/tab-control.git
+`git clone https://github.com/Morbiusss/tab-control.git`
 
 markdown
 Copy code
@@ -23,21 +23,21 @@ Copy code
 
 - Navigate to the `frontend` directory:
 
-cd tab-control/frontend
+`cd tab-control/frontend`
 
 
 Copy code
 
 - Install the required dependencies:
 
-npm install
+`npm install`
 
 
 Copy code
 
 - Start the frontend application:
 
-npm start
+`npm start`
 
 less
 Copy code
@@ -48,21 +48,21 @@ The frontend will now be running at [http://localhost:3000](http://localhost:300
 
 - Navigate to the `backend` directory:
 
-cd ../tab-control-backend
-
+`cd ../tab-control-backend
+`
 
 Copy code
 
 - Install the required dependencies for the backend:
 
-npm install
+`npm install`
 
 
 Copy code
 
 - Start the backend server:
 
-npm run dev
+`npm run dev`
 
 arduino
 Copy code
@@ -71,4 +71,8 @@ The backend will now be running at [http://localhost:5000](http://localhost:5000
 
 ## Project Screenshots
 
-Add any relevant screenshots here to showcase the project.
+![image](https://github.com/user-attachments/assets/3c06aa85-1c5b-47dc-87c2-343ab4763d33)
+![image](https://github.com/user-attachments/assets/dae5208c-8df0-453f-8fdd-cd0d463d14d6)
+![image](https://github.com/user-attachments/assets/887047ec-6cc4-4a28-bc83-60e9a9da1bd5)
+
+
