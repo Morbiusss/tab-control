@@ -1,30 +1,41 @@
-// routes/tabCheck.js
 const express = require("express");
 const router = express.Router();
 
-let activeSessions = {}; // To store active sessions (in-memory for simplicity)
+let activeSessions = {}; 
 
 router.post("/", (req, res) => {
-  const { userId } = req.body;
-  if (!userId) {
-    return res.status(400).json({ message: "User ID is required" });
+  const { userId, appId } = req.body; 
+
+  if (!userId || !appId) {
+    return res.status(400).json({ message: "User ID and App ID are required" });
   }
 
-  if (activeSessions[userId]) {
+
+  if (activeSessions[appId] && activeSessions[appId][userId]) {
     return res.status(200).json({ message: "Already logged in another tab", active: true });
   }
 
-  activeSessions[userId] = true; // Mark user as active
+
+  if (!activeSessions[appId]) {
+    activeSessions[appId] = {};
+  }
+
+  activeSessions[appId][userId] = true; 
   return res.status(200).json({ message: "Tab logged in", active: false });
 });
 
-router.post("/logout", (req, res) => {
-  const { userId } = req.body;
-  if (!userId) {
-    return res.status(400).json({ message: "User ID is required" });
+router.post("/logout-other", (req, res) => {
+  const { userId, appId } = req.body;
+
+  if (!userId || !appId) {
+    return res.status(400).json({ message: "User ID and App ID are required" });
   }
 
-  delete activeSessions[userId];
+
+  if (activeSessions[appId] && activeSessions[appId][userId]) {
+    delete activeSessions[appId][userId];
+  }
+
   return res.status(200).json({ message: "Logged out successfully" });
 });
 

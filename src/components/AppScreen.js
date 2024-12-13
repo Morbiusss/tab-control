@@ -2,31 +2,42 @@ import React, { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import axios from "axios";
 
+
 const AppScreen = () => {
     const { state } = useLocation();
     const navigate = useNavigate();
     const [alertVisible, setAlertVisible] = useState(false);
+    const [alertMessage, setAlertMessage] = useState("");
 
     useEffect(() => {
+        console.log("AppScreen mounted");
+
         const checkActiveTab = async () => {
             const token = localStorage.getItem("token");
-            const response = await axios.post("http://localhost:5000/api/tab-check", {
-                appId: state.app.id,
-                userId: token,
-            });
+            const appId = state.app._id;
 
-            if (response.data.active) {
-                setAlertVisible(true);
+            try {
+                const response = await axios.post("http://localhost:5000/api/tab-check", {
+                    appId: appId,
+                    userId: token,
+                });
+
+                if (response.data.active) {
+                    setAlertVisible(true);
+                    setAlertMessage(response.data.message);
+                }
+            } catch (error) {
+                console.error("Error checking active tab:", error);
             }
         };
 
         checkActiveTab();
-    }, [state.app.id]);
+    }, [state.app._id]);
 
     const handleLogoutOtherTab = async () => {
         const token = localStorage.getItem("token");
         await axios.post("http://localhost:5000/api/logout-other", {
-            appId: state.app.id,
+            appId: state.app._id,
             userId: token,
         });
 
@@ -42,9 +53,7 @@ const AppScreen = () => {
 
                 {alertVisible && (
                     <div style={styles.alertBox}>
-                        <p style={styles.alertMessage}>
-                            You are already logged into another tab.
-                        </p>
+                        <p style={styles.alertMessage}>{alertMessage}</p>
                         <div style={styles.alertButtons}>
                             <button onClick={handleLogoutOtherTab} style={styles.alertButton}>
                                 Log out of the other tab

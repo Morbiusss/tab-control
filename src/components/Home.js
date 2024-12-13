@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
@@ -10,7 +10,7 @@ const Home = () => {
     useEffect(() => {
         const fetchApplications = async () => {
             try {
-                const token = localStorage.getItem("token"); 
+                const token = localStorage.getItem("token");
                 const { data } = await axios.get("http://localhost:5000/api/applications", {
                     headers: {
                         Authorization: `Bearer ${token}`,
@@ -25,9 +25,15 @@ const Home = () => {
         fetchApplications();
     }, []);
 
-    const filteredApps = applications.filter((app) =>
-        app.app_name.toLowerCase().includes(search.toLowerCase())
-    );
+    const filteredApps = useMemo(() => {
+        return applications.filter((app) =>
+            app.app_name.toLowerCase().includes(search.toLowerCase())
+        );
+    }, [applications, search]);
+
+    useEffect(() => {
+        console.log("Home component rendered");
+    });
 
     return (
         <div style={styles.container}>
@@ -41,16 +47,24 @@ const Home = () => {
                     style={styles.searchInput}
                 />
                 <ul style={styles.appList}>
-                    {filteredApps.map((app) => (
-                        <li
-                            key={app.id}
-                            onClick={() => navigate(`/app/${app.id}`, { state: { app } })}
-                            style={styles.appItem}
-                        >
-                            {app.app_name}
-                        </li>
-                    ))}
-                </ul>
+    {filteredApps.map((app) => (
+        <a
+            key={app.id}
+            href={`/app/${app.id}`}
+            style={{ textDecoration: "none" }}
+            onClick={(e) => {
+                e.preventDefault();
+                console.log("Navigating to app:", app.id);
+                navigate(`/app/${app.id}`, { state: { app } });
+            }}
+        >
+            <li style={styles.appItem}>
+                {app.app_name}
+            </li>
+        </a>
+    ))}
+</ul>
+
             </div>
         </div>
     );
