@@ -45,8 +45,7 @@ The frontend will now be running at [http://localhost:3000](http://localhost:300
 
 - Navigate to the `backend` directory:
 
-`cd ../tab-control-backend
-`
+`cd .\tab-control-backend\`
 
 Copy code
 
