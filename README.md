@@ -1,45 +1,74 @@
-Tab Control Project
-This project consists of a frontend and backend that work together to provide a dynamic tab-based interface. Below are the instructions to set up and run the project locally.
+# Tab Control Project
 
-Prerequisites
-Make sure you have the following installed on your machine:
+Welcome to the **Tab Control Project**! This project provides a dynamic tab-based interface with both frontend and backend components. Below are the instructions for setting up and running the project locally.
 
-Node.js (includes npm)
-Getting Started
-1. Clone the Repository
+## Prerequisites
+
+Before you begin, make sure you have the following installed on your machine:
+
+- **Node.js** (includes npm)
+
+## Getting Started
+
+### 1. Clone the Repository
+
 First, clone the repository to your local machine:
 
-bash
-Copy code
 git clone https://github.com/Morbiusss/tab-control.git
-2. Setting Up the Frontend
-Navigate to the frontend directory:
-bash
+
+markdown
 Copy code
+
+### 2. Setting Up the Frontend
+
+- Navigate to the `frontend` directory:
+
 cd tab-control/frontend
-Install the required dependencies:
-bash
+
+
 Copy code
+
+- Install the required dependencies:
+
 npm install
-Start the frontend application:
-bash
+
+
 Copy code
+
+- Start the frontend application:
+
 npm start
-The frontend will now be running at http://localhost:3000.
 
-3. Setting Up the Backend
-Navigate to the backend directory:
-bash
+less
 Copy code
+
+The frontend will now be running at [http://localhost:3000](http://localhost:3000).
+
+### 3. Setting Up the Backend
+
+- Navigate to the `backend` directory:
+
 cd ../tab-control-backend
-Install the required dependencies:
-bash
-Copy code
-npm install
-Start the backend server:
-bash
-Copy code
-npm run dev
-The backend will be running at http://localhost:5000 (or another port if configured differently).
 
-Project Screenshots
+
+Copy code
+
+- Install the required dependencies for the backend:
+
+npm install
+
+
+Copy code
+
+- Start the backend server:
+
+npm run dev
+
+arduino
+Copy code
+
+The backend will now be running at [http://localhost:5000](http://localhost:5000) (or another port if configured differently).
+
+## Project Screenshots
+
+Add any relevant screenshots here to showcase the project.
