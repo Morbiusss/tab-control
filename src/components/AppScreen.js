@@ -10,29 +10,35 @@ const AppScreen = () => {
     const [alertMessage, setAlertMessage] = useState("");
 
     useEffect(() => {
-        console.log("AppScreen mounted");
+        if (state && state.app) {  // Check if state and state.app are defined
+            console.log("AppScreen mounted");
 
-        const checkActiveTab = async () => {
-            const token = localStorage.getItem("token");
-            const appId = state.app._id;
+            const checkActiveTab = async () => {
+                const token = localStorage.getItem("token");
+                const appId = state.app._id;
 
-            try {
-                const response = await axios.post("http://localhost:5000/api/tab-check", {
-                    appId: appId,
-                    userId: token,
-                });
+                try {
+                    const response = await axios.post("http://localhost:5000/api/tab-check", {
+                        appId: appId,
+                        userId: token,
+                    });
 
-                if (response.data.active) {
-                    setAlertVisible(true);
-                    setAlertMessage(response.data.message);
+                    if (response.data.active) {
+                        setAlertVisible(true);
+                        setAlertMessage(response.data.message);
+                    }
+                } catch (error) {
+                    console.error("Error checking active tab:", error);
                 }
-            } catch (error) {
-                console.error("Error checking active tab:", error);
-            }
-        };
+            };
 
-        checkActiveTab();
-    }, [state.app._id]);
+            checkActiveTab();
+        } else {
+            console.error("App data is not available in state.");
+            // Optionally navigate to an error page or display an error message
+            navigate("/home");
+        }
+    }, [state]);
 
     const handleLogoutOtherTab = async () => {
         const token = localStorage.getItem("token");
@@ -44,6 +50,10 @@ const AppScreen = () => {
         setAlertVisible(false);
         navigate("/home");
     };
+
+    if (!state || !state.app) {
+        return <div>Loading...</div>;  // Display loading or error message while checking for state
+    }
 
     return (
         <div style={styles.container}>
@@ -71,6 +81,7 @@ const AppScreen = () => {
         </div>
     );
 };
+
 
 const styles = {
     container: {

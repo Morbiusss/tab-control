@@ -46,11 +46,13 @@ const Home = () => {
                     onChange={(e) => setSearch(e.target.value)}
                     style={styles.searchInput}
                 />
-                <ul style={styles.appList}>
+               <ul style={styles.appList}>
     {filteredApps.map((app) => (
         <a
             key={app.id}
             href={`/app/${app.id}`}
+            target="_blank"
+            rel="noopener noreferrer"
             style={{ textDecoration: "none" }}
             onClick={(e) => {
                 e.preventDefault();
@@ -64,6 +66,7 @@ const Home = () => {
         </a>
     ))}
 </ul>
+
 
             </div>
         </div>
